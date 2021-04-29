@@ -1,0 +1,53 @@
+@use '../../vars.scss' as vars;
+@use '../../mixins.scss' as mixins;
+
+$button-normal: url("https://cdn.realsgii2.dev/pathOS/ui/button/button-default.png");
+$button-hover: url("https://cdn.realsgii2.dev/pathOS/ui/button/button-hover.png");
+$button-active: url("https://cdn.realsgii2.dev/pathOS/ui/button/button-active.png");
+
+$back-normal: url("https://cdn.realsgii2.dev/pathOS/ui/backButton/back-button-default.png");
+$back-hover: url("https://cdn.realsgii2.dev/pathOS/ui/backButton/back-button-hover.png");
+$back-active: url("https://cdn.realsgii2.dev/pathOS/ui/backButton/back-button-active.png");
+
+.button {
+  outline: 0;
+
+	background-color: transparent;
+	position: relative;
+
+	span {
+		display: block;
+		margin-right: 6px;
+	}
+
+	color: #fff;
+	font-size: 22px;
+	border: solid 12px;
+
+	border-image: $button-normal;
+	border-image-slice: 20 50 45 50 fill !important;
+	border-image-repeat: stretch !important;
+
+	&:hover {
+		border-image: $button-hover;
+	}
+
+	&:active {
+		border-image: $button-active;
+	}
+
+  &.back {
+    border-image: $back-normal;
+    border-image-slice: 49 fill !important;
+
+    padding: 0 24px;
+
+    &:hover {
+      border-image: $back-hover;
+    }
+
+    &:active {
+      border-image: $back-active;
+    }
+  }
+}
