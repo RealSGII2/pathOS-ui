@@ -108,23 +108,28 @@ export class App extends React.Component<Props, AppState> {
     const currentDialogue = this.state.dialogues[0]
     const showingDialogue = currentDialogue !== undefined
 
+    if (showingDialogue && typeof document !== "undefined" && currentDialogue.sound !== undefined) {
+      (document.getElementById(`Os${currentDialogue.sound}Sound`) as HTMLAudioElement).play()
+    }
+
     return (
       <div className={styles.app} {...other}>
         {!showingDialogue && children}
         {showingDialogue && (
-          <div>
+          <React.Fragment>
             <Layout layout='prompt'>
-              <Window label={currentDialogue.title}>
+              <Window label={currentDialogue.title} style={{ textAlign: 'center' }}>
                 <p>{currentDialogue.body}</p>
 
                 <Button
                   onClick={() => this.props.dialogueQueue?.removeAtIndex(0)}
+                  style={{ padding: "0 16px" }}
                 >
                   Okay
                 </Button>
               </Window>
             </Layout>
-          </div>
+          </React.Fragment>
         )}
       </div>
     )

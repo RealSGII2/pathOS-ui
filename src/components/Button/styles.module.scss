@@ -1,13 +1,13 @@
 @use '../../vars.scss' as vars;
 @use '../../mixins.scss' as mixins;
 
-$button-normal: url("https://cdn.realsgii2.dev/pathOS/ui/button/button-default.png");
-$button-hover: url("https://cdn.realsgii2.dev/pathOS/ui/button/button-hover.png");
-$button-active: url("https://cdn.realsgii2.dev/pathOS/ui/button/button-active.png");
+$button-normal: url("https://cdn.realsgii2.dev/pathOS/ui/v2/button/button-default.png");
+$button-hover: url("https://cdn.realsgii2.dev/pathOS/ui/v2/button/button-hover.png");
+$button-active: url("https://cdn.realsgii2.dev/pathOS/ui/v2/button/button-active.png");
 
-$back-normal: url("https://cdn.realsgii2.dev/pathOS/ui/backButton/back-button-default.png");
-$back-hover: url("https://cdn.realsgii2.dev/pathOS/ui/backButton/back-button-hover.png");
-$back-active: url("https://cdn.realsgii2.dev/pathOS/ui/backButton/back-button-active.png");
+$back-normal: url("https://cdn.realsgii2.dev/pathOS/ui/v2/back-button/back-button-default.png");
+$back-hover: url("https://cdn.realsgii2.dev/pathOS/ui/v2/back-button/back-button-hover.png");
+$back-active: url("https://cdn.realsgii2.dev/pathOS/ui/v2/back-button/back-button-active.png");
 
 .button {
   outline: 0;

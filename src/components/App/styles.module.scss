@@ -1,7 +1,7 @@
 @use '../../vars.scss' as vars;
 @use '../../mixins.scss' as mixins;
 
-@import url("https://cdn.realsgii2.dev/pathOS/font/sansation-alt.css");
+@import url("https://cdn.realsgii2.dev/pathOS/font/sansation.css");
 
 $toolbar-height: 60px;
 
@@ -25,7 +25,7 @@ $toolbar-height: 60px;
   display: flex;
   align-items: center;
 
-  background-color: darken(vars.$primary-color, 16%);
+  background-color: vars.$secondary-color;
 }
 
 .soundManager {
@@ -42,6 +42,8 @@ body {
   width: 100vw;
   height: 100vh;
 
+  font-size: 20px;
+
   margin: 0;
   padding: 0;
 
@@ -50,14 +52,14 @@ body {
   &::before {
     @include mixins.pseudoCover;
 
-    background-image: url("https://cdn.realsgii2.dev/soma-ui/scanline.png");
+    background-image: url("https://cdn.realsgii2.dev/pathOS/ui/scanline/scanline.png");
 		opacity: 0.2;
   }
 
   &::after {
     @include mixins.pseudoCover;
 
-    background-image: url("https://cdn.realsgii2.dev/soma-ui/background/station.png");
+    background-image: url("https://cdn.realsgii2.dev/pathOS/ui/background/station.png");
 		background-size: 80%;
 		background-repeat: no-repeat;
 		opacity: 0.15;
@@ -70,4 +72,5 @@ body {
 *::after {
   font-family: inherit;
   box-sizing: inherit;
+  cursor: url("https://cdn.realsgii2.dev/pathOS/ui/v2/cursor/cursor.png"), auto !important;
 }

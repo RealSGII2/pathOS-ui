@@ -1,10 +1,10 @@
 {
   "name": "path-os-ui",
   "version": "1.0.0",
-  "description": "Made with create-react-library",
+  "description": "A recreation of the UI featured in SOMA's pathOS terminals.",
   "author": "RealSGII2",
   "license": "MIT",
-  "repository": "RealSGII2/path-os-ui",
+  "repository": "RealSGII2/pathOS-ui",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",

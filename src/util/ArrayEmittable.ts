@@ -5,13 +5,13 @@ export class ArrayEmittable<T> extends EventEmitter {
 
   public push(...items: T[]) {
     const returned = this.items.push(...items)
-    this.emit('change', returned)
+    this.emit('change', this.items)
     return returned
   }
 
   public removeAtIndex(index: number) {
     const returned = this.items.splice(index, 1)
-    this.emit('change', returned)
+    this.emit('change', this.items)
     return returned
   }
 

@@ -6,6 +6,7 @@ import 'path-os-ui/dist/index.css'
 import queue from './dialogueQueue'
 
 const App = () => {
+  //a
 
   return (
     <>
@@ -34,7 +35,9 @@ const App = () => {
 
           <Window label='Testing'>
             <Layout layout='list'>
-              <Button>
+              <Button onClick={() => {
+                queue.error({ title: 'Test Failed', body: 'This is an example dialogue.' })
+              }}>
                 Alert
               </Button>
             </Layout>
