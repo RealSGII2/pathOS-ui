@@ -33,4 +33,21 @@
     flex-direction: column;
     gap: 1rem;
   }
+
+  &.vertical {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  &.fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.spacer {
+  flex: 1 0 auto;
 }

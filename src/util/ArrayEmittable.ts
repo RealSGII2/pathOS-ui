@@ -9,6 +9,12 @@ export class ArrayEmittable<T> extends EventEmitter {
     return returned
   }
 
+  public unshift(...items: T[]) {
+    const returned = this.items.unshift(...items)
+    this.emit('change', this.items)
+    return returned
+  }
+
   public removeAtIndex(index: number) {
     const returned = this.items.splice(index, 1)
     this.emit('change', this.items)

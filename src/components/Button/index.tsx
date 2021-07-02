@@ -1,16 +1,19 @@
 import * as React from 'react'
 import styles from './styles.module.scss'
 
-interface Props
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  > {
+interface Props {
   label?: string
   disableSound?: boolean
+  disabled?: boolean
 }
 
-class BackButton extends React.Component<Props> {
+class BackButton extends React.Component<
+  Props &
+    React.DetailedHTMLProps<
+      React.HTMLAttributes<HTMLButtonElement>,
+      HTMLButtonElement
+    >
+> {
   constructor(props: Props) {
     super(props)
     this.onMouseDown = this.onMouseDown.bind(this)
@@ -40,7 +43,13 @@ class BackButton extends React.Component<Props> {
   }
 }
 
-export class Button extends React.Component<Props> {
+export class Button extends React.Component<
+  Props &
+    React.DetailedHTMLProps<
+      React.HTMLAttributes<HTMLButtonElement>,
+      HTMLButtonElement
+    >
+> {
   public static BackButton = BackButton
 
   constructor(props: Props) {

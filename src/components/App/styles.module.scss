@@ -47,13 +47,14 @@ body {
   margin: 0;
   padding: 0;
 
-  filter: blur(0.25px);
+  filter: blur(0.25px) brightness(1.5);
 
   &::before {
     @include mixins.pseudoCover;
 
     background-image: url("https://cdn.realsgii2.dev/pathOS/ui/scanline/scanline.png");
 		opacity: 0.2;
+    z-index: 999;
   }
 
   &::after {
@@ -63,7 +64,6 @@ body {
 		background-size: 80%;
 		background-repeat: no-repeat;
 		opacity: 0.15;
-    z-index: 999;
   }
 }
 

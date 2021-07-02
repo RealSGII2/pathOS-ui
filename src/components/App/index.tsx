@@ -24,6 +24,17 @@ interface ToolbarProps
   > {}
 
 class ToolBar extends React.Component<ToolbarProps> {
+  static getBackButtonProps(dialogueQueue: ArrayEmittable<Dialogue>) {
+    return {
+      onClick() {
+        if (dialogueQueue.getLength() > 0) {
+          // eslint-disable-next-line no-unused-expressions
+          dialogueQueue?.removeAtIndex(0)
+        }
+      }
+    }
+  }
+
   render() {
     const { children, ...other } = this.props
 
@@ -108,8 +119,21 @@ export class App extends React.Component<Props, AppState> {
     const currentDialogue = this.state.dialogues[0]
     const showingDialogue = currentDialogue !== undefined
 
-    if (showingDialogue && typeof document !== "undefined" && currentDialogue.sound !== undefined) {
-      (document.getElementById(`Os${currentDialogue.sound}Sound`) as HTMLAudioElement).play()
+    if (
+      showingDialogue &&
+      typeof document !== 'undefined' &&
+      currentDialogue.sound !== undefined
+    ) {
+      ;(
+        document.getElementById(
+          `Os${currentDialogue.sound}Sound`
+        ) as HTMLAudioElement
+      ).play()
+    }
+
+    let body = currentDialogue?.body
+    if (typeof body === 'function') {
+      body = body(() => this.props.dialogueQueue?.removeAtIndex(0))
     }
 
     return (
@@ -117,16 +141,21 @@ export class App extends React.Component<Props, AppState> {
         {!showingDialogue && children}
         {showingDialogue && (
           <React.Fragment>
-            <Layout layout='prompt'>
-              <Window label={currentDialogue.title} style={{ textAlign: 'center' }}>
-                <p>{currentDialogue.body}</p>
+            <Layout layout={currentDialogue.dialogType || 'prompt'}>
+              <Window
+                label={currentDialogue.title}
+                style={{ textAlign: currentDialogue.textAlign || 'center' }}
+              >
+                {typeof body === 'string' ? <p>{body}</p> : body}
 
-                <Button
-                  onClick={() => this.props.dialogueQueue?.removeAtIndex(0)}
-                  style={{ padding: "0 16px" }}
-                >
-                  Okay
-                </Button>
+                {!currentDialogue.removeDefaultButton && (
+                  <Button
+                    onClick={() => this.props.dialogueQueue?.removeAtIndex(0)}
+                    style={{ padding: '0 16px' }}
+                  >
+                    Okay
+                  </Button>
+                )}
               </Window>
             </Layout>
           </React.Fragment>

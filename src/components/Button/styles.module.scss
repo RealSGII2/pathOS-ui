@@ -28,11 +28,11 @@ $back-active: url("https://cdn.realsgii2.dev/pathOS/ui/v2/back-button/back-butto
 	border-image-slice: 20 50 45 50 fill !important;
 	border-image-repeat: stretch !important;
 
-	&:hover {
+	&:enabled:hover {
 		border-image: $button-hover;
 	}
 
-	&:active {
+	&:enabled:active {
 		border-image: $button-active;
 	}
 
@@ -42,12 +42,16 @@ $back-active: url("https://cdn.realsgii2.dev/pathOS/ui/v2/back-button/back-butto
 
     padding: 0 24px;
 
-    &:hover {
+    &:enabled:hover {
       border-image: $back-hover;
     }
 
-    &:active {
+    &:enabled:active {
       border-image: $back-active;
     }
+  }
+
+  &:disabled {
+    filter: saturate(0.75) brightness(0.5);
   }
 }
