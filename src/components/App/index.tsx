@@ -51,27 +51,27 @@ class SoundManager extends React.Component {
     return (
       <div className={styles.soundManager}>
         <audio
-          src='https://cdn.realsgii2.dev/pathOS/sound/back.wav'
+          src='https://cdn.realsgii2.dev/project/pathOS/sound/back.wav'
           id='OsBackSound'
         />
 
         <audio
-          src='https://cdn.realsgii2.dev/pathOS/sound/forward.wav'
+          src='https://cdn.realsgii2.dev/project/pathOS/sound/forward.wav'
           id='OsForwardSound'
         />
 
         <audio
-          src='https://cdn.realsgii2.dev/pathOS/sound/negative.wav'
+          src='https://cdn.realsgii2.dev/project/pathOS/sound/negative.wav'
           id='OsNegativeSound'
         />
 
         <audio
-          src='https://cdn.realsgii2.dev/pathOS/sound/confirm.wav'
+          src='https://cdn.realsgii2.dev/project/pathOS/sound/confirm.wav'
           id='OsConfirmSound'
         />
 
         <audio
-          src='https://cdn.realsgii2.dev/pathOS/sound/error.wav'
+          src='https://cdn.realsgii2.dev/project/pathOS/sound/error.wav'
           id='OsErrorSound'
         />
       </div>

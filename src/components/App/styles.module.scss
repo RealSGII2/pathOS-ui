@@ -1,7 +1,7 @@
 @use '../../vars.scss' as vars;
 @use '../../mixins.scss' as mixins;
 
-@import url("https://cdn.realsgii2.dev/pathOS/font/sansation.css");
+@import url("https://cdn.realsgii2.dev/project/pathOS/font/sansation.css");
 
 $toolbar-height: 60px;
 
@@ -52,7 +52,7 @@ body {
   &::before {
     @include mixins.pseudoCover;
 
-    background-image: url("https://cdn.realsgii2.dev/pathOS/ui/scanline/scanline.png");
+    background-image: url("https://cdn.realsgii2.dev/project/pathOS/ui/scanline/scanline.png");
 		opacity: 0.2;
     z-index: 999;
   }
@@ -60,7 +60,7 @@ body {
   &::after {
     @include mixins.pseudoCover;
 
-    background-image: url("https://cdn.realsgii2.dev/pathOS/ui/background/station.png");
+    background-image: url("https://cdn.realsgii2.dev/project/pathOS/ui/background/station.png");
 		background-size: 80%;
 		background-repeat: no-repeat;
 		opacity: 0.15;
@@ -72,5 +72,5 @@ body {
 *::after {
   font-family: inherit;
   box-sizing: inherit;
-  cursor: url("https://cdn.realsgii2.dev/pathOS/ui/v2/cursor/cursor.png"), auto !important;
+  cursor: url("https://cdn.realsgii2.dev/project/pathOS/ui/v2/cursor/cursor.png"), auto !important;
 }
